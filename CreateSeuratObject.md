@@ -125,7 +125,7 @@ For spine 14dpa the S9_, S12_, and S14 samples from sc1 matrix will be subset in
             names.delim = "_")
         saveRDS(spine.14dpa, file  =  "./seurat_objects/spine.14dpa.rds")
 
->sessionInfo() 
+>sessionInfo()  
 R version 4.0.3 (2020-10-10)  
 Platform: x86_64-pc-linux-gnu (64-bit)  
 Running under: Ubuntu 18.04.5 LTS  
@@ -137,6 +137,6 @@ locale:
  [6] LC_MESSAGES=en_US.UTF-8    LC_PAPER=en_US.UTF-8       LC_NAME=C                  LC_ADDRESS=C               LC_TELEPHONE=C   
 [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C  
 attached base packages:  
-[1] stats     graphics  grDevices utils     datasets  methods   base  
+[1] stats     graphics   utils     datasets  methods   base  
 other attached packages:  
 [1] Seurat_3.2.2  
