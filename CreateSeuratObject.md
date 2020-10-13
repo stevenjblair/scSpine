@@ -125,22 +125,18 @@ For spine 14dpa the S9_, S12_, and S14 samples from sc1 matrix will be subset in
             names.delim = "_")
         saveRDS(spine.14dpa, file  =  "./seurat_objects/spine.14dpa.rds")
 
->sessionInfo()
-R version 4.0.3 (2020-10-10)
-Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 18.04.5 LTS
-Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/atlas/libblas.so.3.10.3
-LAPACK: /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3
-locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8     LC_MONETARY=en_US.UTF-8   
- [6] LC_MESSAGES=en_US.UTF-8    LC_PAPER=en_US.UTF-8       LC_NAME=C                  LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-other attached packages:
-[1] Seurat_3.2.2
-
-
-
-
+>sessionInfo() 
+R version 4.0.3 (2020-10-10)  
+Platform: x86_64-pc-linux-gnu (64-bit)  
+Running under: Ubuntu 18.04.5 LTS  
+Matrix products: default  
+BLAS:   /usr/lib/x86_64-linux-gnu/atlas/libblas.so.3.10.3  
+LAPACK: /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3  
+locale:  
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8     LC_MONETARY=en_US.UTF-8  
+ [6] LC_MESSAGES=en_US.UTF-8    LC_PAPER=en_US.UTF-8       LC_NAME=C                  LC_ADDRESS=C               LC_TELEPHONE=C   
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C  
+attached base packages:  
+[1] stats     graphics  grDevices utils     datasets  methods   base  
+other attached packages:  
+[1] Seurat_3.2.2  
