@@ -16,9 +16,10 @@ The two matrices should be loaded into R.  The dot before the folder tells the s
 
 Hani gave me an excel sheet that has the following sample info in it:
 ||Intact.Limb|Limb 3dpa|Limb 14dpa|Intact Spine|Spine 3dpa|Spine 14dpa|
-| :-------------: | :----------: | :-----------: |:-------------: | :-------------: | :-------------: | :-------------: | 
+| :---: | :----------: | :-----------: |:-------------: | :-------------: | :-------------: | :-------------: | 
 |sc1|||S4, S7|||S9, S12, S14|
-|sc2|S3, S7|S1, S2, S26||S4, S5 |S8, S9, S11||
+|sc2|S3, S7|S1, S2, S26||S4, S5 |S8, S9, S11||  
+
 The other data collected were for internal and adjacent models and will not be used here.
 ## Creating Seurat Objects 
 Using R we can easily  create objects directly from the matrices as follows
@@ -46,13 +47,15 @@ I will break down these arguments before moving on and creating the additional o
 |min.features|this cutoff will include cells that have at least this many features.|
 |names.field|you can give the cells identification based on their sample name in the matrix. **I choose to include all cells that have at least 1 feature in it.**|
 |names.delim|this is the delim that sepeterates the name.  in our case the name is SX_xxxxx so a delim of _ is specifed.|
-|saveRDS|this saves the object limb.intact to the filename that file = points to.|
-**You may have noticed that I omitted the counts argument** 
+|saveRDS|this saves the object limb.intact to the filename that file = points to.|  
+
+**You may have noticed that I omitted the counts argument**  
+
 sc2.matrix[, grep('^S(3|7)_', colnames(sc2.matrix)),] is the counts argument but I used a feature instead.  So, instead of telling it that I wanted to use the file *sc2.matrix* I instead used a grep command to remove only the samples that include data for the samples of interest as explained here.
 ||Description|
 |--|--|
 |sc2.matrix|The tabular data that contains the samples we want.|
-|[, grep('^S(3\|7)_',|grep is searching for a 3 character string.  The ^ tells grep to find any strings that begin with the character capital S. The parenthesis and logical operator \| tells grep the next character must be 3 OR 7.  The third character must be underscore.  Combined, grep knows it is looking for strings that begin with S3_ or S7_.     |
+|grep('^S(3\|7)_',|grep is searching for a 3 character string.  The ^ tells grep to find any strings that begin with the character capital S. The parenthesis and logical operator \| tells grep the next character must be 3 OR 7.  The third character must be underscore.  Combined, grep knows it is looking for strings that begin with S3_ or S7_.     |
 |colnames(sc2.matrix)|This is the location grep is searching.  Just like in terminal, grep follows the syntax grep string location. This is telling grep to use the search string in the column names of the sc2.matrix table.|
 **Now it is time to run similar commands for each sample**
 
