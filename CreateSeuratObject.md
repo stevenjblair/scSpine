@@ -56,7 +56,8 @@ sc2.matrix[, grep('^S(3|7)_', colnames(sc2.matrix)),] is the counts argument but
 |--|--|
 |sc2.matrix|The tabular data that contains the samples we want.|
 |grep('^S(3\|7)_',|grep is searching for a 3 character string.  The ^ tells grep to find any strings that begin with the character capital S. The parenthesis and logical operator \| tells grep the next character must be 3 OR 7.  The third character must be underscore.  Combined, grep knows it is looking for strings that begin with S3_ or S7_.     |
-|colnames(sc2.matrix)|This is the location grep is searching.  Just like in terminal, grep follows the syntax grep string location. This is telling grep to use the search string in the column names of the sc2.matrix table.|
+|colnames(sc2.matrix)|This is the location grep is searching.  Just like in terminal, grep follows the syntax grep string location. This is telling grep to use the search string in the column names of the sc2.matrix table.|  
+
 **Now it is time to run similar commands for each sample**
 
 For limb 3dpa object the S1_, S2_, S26_ samples from s2 will be subset into a Seurat object
