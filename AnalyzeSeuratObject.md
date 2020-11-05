@@ -119,6 +119,7 @@ This is difficult to read.  The target is where the plateau begins to climb as t
 ## Calculate how many PCs to use
 We can rank the PCs by comparing the percent of variation associated with each PC with it's adjacent PC with the equation:  
 
+
 $$
 \%\:of\: PC\:variation  = \frac{\sigma} {\sum\sigma}\:\times\:100
 $$
@@ -203,6 +204,7 @@ seq_folder | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
  spine_14dpa | NA | NA | 148 | NA | 65 | NA | NA | 35 | 1
  spine_3dpa | 4 | 1 | NA | 9 | NA | 6 | 44 | NA | NA
  spine_intact | 6 | 2 | NA | 32 | NA | NA | 1 | NA | NA
+
 This generated table has some interesting details.  Clearly it shows that there is not much data in this dataset.  It leans heavily towards the limb 3dpa and spine 14dpa samples.  But even with the sparsity is does show some things of interest.  Particularly the cluster 7 and 8 are unique to 14dpa time point and that the spine 14dpa has 1 cell in the 8th cluster.  I will explore this later to see if perhaps the cell type may be something that is shared between spine and limb. This table also indicates that there are 8 clusters across the entire dataset.  
 
 ## Visualizing the cluster data
@@ -281,8 +283,10 @@ We begin the process of identifying the clusters by curating a list of all of th
         pseudocount.use = 1,
         return.thresh = 0.01)
 Looking at the top of the list.
+```
+head(markers,3)
+```
 
-    head(markers,3)
 
 ||p_val | avg_logFC | pct.1 | pct.2  |  p_val_adj | cluster |gene
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
