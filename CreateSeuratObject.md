@@ -91,7 +91,8 @@ Hani gave me an excel sheet that has the following sample info in it:
 | :-------------: | :----------: | :-----------: |:-------------: | :-------------: | :-------------: | :-------------: | 
 |sc1|||S4, S7|||S9, S12, S14|
 |sc2|S3, S7|S1, S2, S26||S4, S5 |S8, S9, S11||
-The other data collected were for internal and adjacent models and will not be used here.
+
+The other data collected were for internal and adjacent models and will not be used here.  
 ## Creating Seurat Objects 
 Using R we can easily  create objects directly from the matrices as follows
 
@@ -119,13 +120,20 @@ I will break down these arguments before moving on and creating the additional o
 |names.field|you can give the cells identification based on their sample name in the matrix. **I choose to include all cells that have at least 100 features in it.** cells that have less than 100 features are prone to be unreliable.|
 |names.delim|this is the delim that sepeterates the name.  in our case the name is SX_xxxxx so a delim of _ is specifed.|
 |saveRDS|this saves the object limb.intact to the filename that file = points to.|
+
+
 **You may have noticed that I omitted the counts argument** 
+
+
 sc2.anno[, grep('^S(3|7)_', colnames(sc2.anno)),] is the counts argument but I used a feature instead.  So, instead of telling it that I wanted to use the file *sc2.anno* I instead used a grep command to remove only the samples that include data for the samples of interest as explained here.
+
+
 ||Description|
 |--|--|
 |sc2.anno|The tabular data that contains the samples we want.|
-|[, grep('^S(3\|7)_',|grep is searching for a 3 character string.  The ^ tells grep to find any strings that begin with the character capital S. The parenthesis and logical operator \| tells grep the next character must be 3 OR 7.  The third character must be underscore.  Combined, grep knows it is looking for strings that begin with S3_ or S7_.     |
+|[, grep('^S(3\|7)_',|grep is searching for a 3 character string.  The ^ tells grep to find any strings that begin with the character capital S. The parenthesis and logical operator \| tells grep the next character must be 3 OR 7.  The third character must be underscore.  Combined, grep knows it is looking for strings that begin with S3_ or S7_.|
 |colnames(sc2.anno)|This is the location grep is searching.  Just like in terminal, grep follows the syntax grep string location. This is telling grep to use the search string in the column names of the sc2.anno table.|
+
 **Now it is time to run similar commands for each sample**
 
 For limb 3dpa object the S1_, S2_, S26_ samples from s2 will be subset into a Seurat object
@@ -194,8 +202,8 @@ For spine 14dpa the S9_, S12_, and S14 samples from sc1 matrix will be subset in
         saveRDS(spine.14dpa, file  =  "./seurat_objects/spine.14dpa.rds")
 
 >sessionInfo()  
-R version 4.0.3 (2020-10-10). 
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.0.3 (2020-10-10)
+Platform: x86_64-pc-linux-gnu (64-bit)  
 Running under: Ubuntu 18.04.5 LTS
 Matrix products: default
 BLAS:   /usr/lib/x86_64-linux-gnu/atlas/libblas.so.3.10.3
